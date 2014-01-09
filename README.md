@@ -1,6 +1,6 @@
 # Git SVN commands
 
-A couple of commands to help me in my daily use of git-svn
+A couple of commands to help you in your daily use of git-svn
 
 ## git-svnbranch
 
