@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -z $1 ] && exit 1
+
+git stash
+# Create backup branch
+git branch $1-backup local-$1 > /dev/null 2>&1
+git checkout $1-backup
+# Backup work branch
+git reset --hard local-$1
+# Come back to work branch
+git checkout local-$1

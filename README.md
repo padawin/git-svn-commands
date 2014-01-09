@@ -21,6 +21,24 @@ The working branch will be named local-<branch-name>.
 
 <branch-name> must be a valid svn branch.
 
+## git-svnbackup
+
+Script to backup a local branch to prevent the loss of commits if the dcommit fails
+and reset the branch's commits (happens to me sometimes because of the svn hook).
+
+### Usage
+
+```
+git svnbackup local-<branch-name>
+```
+
+The branch <branch-name> will be backed up as <branch-name>-backup.
+**This must be run before doing git svn dcommit.**
+
+### Improvements
+
+Remove args[1] to backup the current branch.
+
 ## Installation
 
 Once every script have been set up (cf Setup sections), run setup.sh.
