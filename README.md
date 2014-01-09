@@ -39,6 +39,31 @@ The branch <branch-name> will be backed up as <branch-name>-backup.
 
 Remove args[1] to backup the current branch.
 
+## git-svngetbackup
+
+Script to retrieve a bunch of commits if a git svn dcommit failed and
+reseted the branch.
+
+### Usage
+
+```
+git svngetbackup local-<branchname>
+```
+
+Once the backup has been retrieve, you can edit the faulty commit with:
+```
+git rebase -i <branch-name>
+```
+Then backup your changes:
+```
+git svnbackup local-<branch-name>
+```
+And git svn dcommit again.
+
+### Improvements
+
+Remove args[1] to backup the current branch.
+
 ## Installation
 
 Once every script have been set up (cf Setup sections), run setup.sh.

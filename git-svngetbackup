@@ -1,0 +1,10 @@
+#!/bin/bash
+
+[ -z $1 ] && exit 1
+
+# if the dcommit fails (svnhook for example), and your commits are reseted, reset
+# your branch from the backup and svn rebase it, then rebase -i to edit the
+# faulty commit, then backup and dcommit
+git checkout $1
+git reset --hard  $1-backup && git svn rebase
+
