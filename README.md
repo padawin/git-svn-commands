@@ -29,10 +29,10 @@ and reset the branch's commits (happens to me sometimes because of the svn hook)
 ### Usage
 
 ```
-git svnbackup local-<branch-name>
+git svnbackup
 ```
 
-The branch <branch-name> will be backed up as <branch-name>-backup.
+The current branch will be backed up as <branch-name>-backup.
 **This must be run before doing git svn dcommit.**
 
 ### Improvements
@@ -47,7 +47,7 @@ reseted the branch.
 ### Usage
 
 ```
-git svngetbackup local-<branchname>
+git svngetbackup
 ```
 
 Once the backup has been retrieve, you can edit the faulty commit with:
@@ -56,7 +56,7 @@ git rebase -i <branch-name>
 ```
 Then backup your changes:
 ```
-git svnbackup local-<branch-name>
+git svnbackup
 ```
 And git svn dcommit again.
 
