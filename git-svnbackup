@@ -3,13 +3,12 @@
 git status > /dev/null
 [ $? -ne 0 ] && echo "Not in a git repository" 1>&2 && exit 1
 
-[ -z $1 ] && exit 1
-
+currentBranch=$(git rev-parse --abbrev-ref HEAD)
 git stash
 # Create backup branch
-git branch $1-backup local-$1 > /dev/null 2>&1
-git checkout $1-backup
+git branch $currentBranch-backup $currentBranch > /dev/null 2>&1
+git checkout $currentBranch-backup
 # Backup work branch
-git reset --hard local-$1
+git reset --hard $currentBranch
 # Come back to work branch
-git checkout local-$1
+git checkout $currentBranch
