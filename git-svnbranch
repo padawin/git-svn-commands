@@ -8,5 +8,5 @@ git status > /dev/null
 git config --add svn-remote.$1.url svn+ssh://username@svn.repo.host/path/to/branches/$1
 git config --add svn-remote.$1.fetch :refs/remotes/$1
 git svn fetch $1
-git checkout -b local-$1 -t $1
+git checkout -b local-$1 $1
 git svn rebase $1
