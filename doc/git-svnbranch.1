@@ -1,0 +1,15 @@
+.\" Manpage for git-svnbranch.
+.\" Contact git@ghislain-rodrigues.fr to correct errors or typos.
+.TH man 1 "14 April 2014" "1.0" "git-svnbranch man page"
+.SH NAME
+git-svnbranch
+.SH SYNOPSIS
+git svnbranch [BRANCHNAME]
+.SH DESCRIPTION
+git-svnbranch creates a local Git branch local-[BRANCHNAME] from an existing Subversion branch [BRANCHNAME].
+.SH OPTIONS
+git-svnbranch expect as single option the name of the branch on the Subversion server.
+.SH BUGS
+If the branch creation failed for some reason, the first part of the process (the remove creation) will fail, but the program execution will not be interrupted.
+.SH AUTHOR
+Ghislain Rodrigues (git@ghislain-rodrigues.fr)
