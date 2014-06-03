@@ -7,6 +7,11 @@ currentBranch=$(git rev-parse --abbrev-ref HEAD)
 git stash
 # Create backup branch
 git branch $currentBranch-backup $currentBranch > /dev/null 2>&1
+
+# reset the backup branch as the original branch state the case
+# when the backup branch already existed.
+# If the backup branch is new, those 2 commands are not necessary,
+# but armless though.
 git checkout $currentBranch-backup
 # Backup work branch
 git reset --hard $currentBranch
